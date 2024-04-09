@@ -1,7 +1,11 @@
 import React from "react";
+import { useQuizzes } from "../context/QuizzesContext";
 
-function FinishedScreen({ points, maxPossiblePoints, highscore, dispatch }) {
+function FinishedScreen() {
+  const { points, maxPossiblePoints, highscore, dispatch } = useQuizzes();
+
   const percentage = Math.ceil((points * 100) / maxPossiblePoints);
+  
   return (
     <>
     <p className="result">
